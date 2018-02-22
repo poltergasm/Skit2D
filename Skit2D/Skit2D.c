@@ -1,4 +1,5 @@
-#include "Skit2D.h"
+#include "skit2d.h"
+#include "textures.h"
 
 void skit2d_init(Skit2D *engine, const char* title, int x, int y, int width, int height, bool fullScreen)
 {
@@ -13,14 +14,15 @@ void skit2d_init(Skit2D *engine, const char* title, int x, int y, int width, int
             printf("* Window successfully created\n");
         }
 
-        engine->renderer = SDL_CreateRenderer(engine->window, -1, 0);
+        engine->renderer = SDL_CreateRenderer(engine->window, -1, SDL_RENDERER_SOFTWARE);
         if (engine->renderer != NULL) {
             SDL_SetRenderDrawColor(engine->renderer, 0, 0, 0, 255);
-            printf("* Renderer created");
+            printf("* Renderer created\n");
         }
 
         engine->running = true;
-        printf("Going to events\n");
+        printf("WE ready\n");
+        skit2d_load(engine);
     } else {
         printf("! There was a problem initializing SDL\n");
         engine->running = false;
@@ -50,6 +52,7 @@ void skit2d_update(Skit2D *engine)
 void skit2d_render(Skit2D *engine)
 {
     SDL_RenderClear(engine->renderer);
+    skit2d_draw(engine);
     SDL_RenderPresent(engine->renderer);
 }
 

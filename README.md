@@ -11,10 +11,12 @@ This is just an experiment game engine written in plain C. Why? I don't really k
 5. Copy the `bin/SDL.dll` file to your compilers `bin` folder.
 6. Add `SDL.dll` to your project folder.
 
+Do the same for SDL_Image
+
 ## Compiling
 
 Once you've done the steps above, compiling is pretty simple
 
 ```bash
-gcc -o game main.c -lmingw32 -lSDL2main -lSDL2
+gcc -o game main.c -lmingw32 -lSDL2main -lSDL2 -lSDL2_Image
 ```
