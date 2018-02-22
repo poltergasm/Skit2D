@@ -8,7 +8,7 @@ void skit2d_init(Skit2D *engine, const char* title, int x, int y, int width, int
             flags = SDL_WINDOW_FULLSCREEN;
 
         printf("* SDL Initialized OK\n");
-        engine->window = SDL_CreateWindow(title, x, y, height, width, flags);
+        engine->window = SDL_CreateWindow(title, x, y, width, height, flags);
         if (engine->window != NULL) {
             printf("* Window successfully created\n");
         }

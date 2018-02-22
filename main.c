@@ -2,8 +2,8 @@
 
 const int xpos = SDL_WINDOWPOS_CENTERED;
 const int ypos = SDL_WINDOWPOS_CENTERED;
-const int height = 800;
-const int width  = 600;
+const int width  = 800;
+const int height = 600;
 
 Skit2D engine;
 
