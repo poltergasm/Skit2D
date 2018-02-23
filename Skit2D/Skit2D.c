@@ -60,6 +60,7 @@ void skit2d_destroy(Skit2D *engine)
 {
     SDL_DestroyWindow(engine->window);
     SDL_DestroyRenderer(engine->renderer);
+    textures_destroy(engine);
     SDL_Quit();
     printf("* Destroyed SDL objects after quit\n");
 }

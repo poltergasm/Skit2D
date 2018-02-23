@@ -6,20 +6,21 @@ const int ypos = SDL_WINDOWPOS_CENTERED;
 const unsigned int width  = 800;
 const unsigned int height = 600;
 
-SDL_Texture *mario;
-SDL_Rect texr;
+texture_t mario;
+
 void skit2d_load(Skit2D *engine)
 {
     printf("Engine loaded!\n");
     mario = skit2d_texture(engine, "assets/gfx/mario.jpg");
-    int w,h;
-    SDL_QueryTexture(mario, NULL, NULL, &w, &h);
-    texr.x = width/3; texr.y = height/3; texr.w = w*2; texr.h = h*2;
+    mario.rect.x = width/3;
+    mario.rect.y = height/3;
+    mario.rect.w = mario.width*2;
+    mario.rect.h = mario.height*2;
 }
 
 void skit2d_draw(Skit2D *engine)
 {
-    SDL_RenderCopy(engine->renderer, mario, NULL, &texr);
+    skit2d_graphics_draw(engine, &mario);
 }
 
 int main(int argv, char** args)

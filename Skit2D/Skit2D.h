@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#define array_length(x)  (sizeof(x) / sizeof((x)[0]))
+
 SDL_Window *skit2d_sdl_window;
 SDL_Renderer *skit2d_sdl_renderer;
 //bool skit2d_running = false;
